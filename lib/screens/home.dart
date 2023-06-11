@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Container(
                   color: AppColors.blackCoral,
-                  width: 360,
+                  width: double.infinity,
                   height: 216,
                 ),
                 Padding(
@@ -78,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         color: AppColors.slateGray),
-                    width: 328,
+                    width: double.infinity - 16,
                     height: 188,
                     child: Column(
                       children: [
@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 24,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

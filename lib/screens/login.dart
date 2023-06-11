@@ -13,158 +13,160 @@ class LogInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 340.0.h,
-              width: MediaQuery.of(context).size.width,
-              color: AppColors.magnolia,
-              child: Column(
-                children: [
-                  Text(
-                    'MBank',
-                    style: TextStyle(
-                      fontSize: 28.sp,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.shuttleGray,
-                    ),
-                  ),
-                  SizedBox(height: 58.0.h),
-                  SvgPicture.asset(
-                    MBankAssetsSvg.logInSvg,
-                    width: 190.0.w,
-                    height: 190.0.h,
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: 16.0.w,
-                top: 17.0.h,
-                right: 16.0.w,
-                bottom: 40.0.h,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Enter your\nmobile number',
-                    style: TextStyle(
-                      fontSize: 21.0.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 24.0.h, bottom: 4.0.h),
-                    child: Text(
-                      'Mobile number',
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 340.0.h,
+                width: MediaQuery.of(context).size.width,
+                color: AppColors.magnolia,
+                child: Column(
+                  children: [
+                    Text(
+                      'MBank',
                       style: TextStyle(
-                        fontSize: 12.0.sp,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 28.sp,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.shuttleGray,
                       ),
                     ),
-                  ),
-                  TextFormField(
-                    textAlignVertical: TextAlignVertical.bottom,
-                    autofocus: true,
-                    style: const TextStyle(),
-                    decoration: InputDecoration(
-                      counter: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const CreateUser(),
-                              ),
-                            );
-                          },
-                          child: const Text(
-                            'Create new account',
-                            style: TextStyle(color: AppColors.slateGray),
-                          )),
-                      border: const OutlineInputBorder(gapPadding: 0.0),
-                      prefixText: ' +998   ',
-                      prefixStyle: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.slateGray,
-                      ),
-                      hintText: 'XX-XXX-XX-XX',
-                      constraints: BoxConstraints.tightFor(height: 90.0.h),
+                    SizedBox(height: 58.0.h),
+                    SvgPicture.asset(
+                      MBankAssetsSvg.logInSvg,
+                      width: 190.0.w,
+                      height: 190.0.h,
                     ),
-                  ),
-                  SizedBox(
-                    height: 28.h,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const PassScreen(),
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize:
-                          Size(MediaQuery.of(context).size.width, 45.0.h),
-                      backgroundColor: AppColors.blackCoral,
-                    ),
-                    child: const Text("Continue"),
-                  ),
-                  SizedBox(height: 80.0.h),
-                  const Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Divider(),
-                      Text(
-                        'or continue using',
-                        style: TextStyle(
-                          backgroundColor: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 16),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              fixedSize: Size(100.0.w, 45.0.h),
-                              backgroundColor: AppColors.white),
-                          child: SvgPicture.asset(MBankAssetsSvg.facebook),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            fixedSize: Size(100.0.w, 45.0.h),
-                            backgroundColor: AppColors.white),
-                        child: SvgPicture.asset(MBankAssetsSvg.google),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              fixedSize: Size(100.0.w, 45.0.h),
-                              backgroundColor: AppColors.white),
-                          child: SvgPicture.asset(MBankAssetsSvg.apple),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 16.0.w,
+                  top: 17.0.h,
+                  right: 16.0.w,
+                  bottom: 40.0.h,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Enter your\nmobile number',
+                      style: TextStyle(
+                        fontSize: 21.0.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 24.0.h, bottom: 4.0.h),
+                      child: Text(
+                        'Mobile number',
+                        style: TextStyle(
+                          fontSize: 12.0.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    TextFormField(
+                      textAlignVertical: TextAlignVertical.bottom,
+                      autofocus: true,
+                      style: const TextStyle(),
+                      decoration: InputDecoration(
+                        counter: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const CreateUser(),
+                                ),
+                              );
+                            },
+                            child: const Text(
+                              'Create new account',
+                              style: TextStyle(color: AppColors.slateGray),
+                            )),
+                        border: const OutlineInputBorder(gapPadding: 0.0),
+                        prefixText: ' +998   ',
+                        prefixStyle: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.slateGray,
+                        ),
+                        hintText: 'XX-XXX-XX-XX',
+                        constraints: BoxConstraints.tightFor(height: 90.0.h),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 28.h,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PassScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize:
+                            Size(MediaQuery.of(context).size.width, 45.0.h),
+                        backgroundColor: AppColors.blackCoral,
+                      ),
+                      child: const Text("Continue"),
+                    ),
+                    SizedBox(height: 80.0.h),
+                    const Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Divider(),
+                        Text(
+                          'or continue using',
+                          style: TextStyle(
+                            backgroundColor: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 16),
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                fixedSize: Size(100.0.w, 45.0.h),
+                                backgroundColor: AppColors.white),
+                            child: SvgPicture.asset(MBankAssetsSvg.facebook),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              fixedSize: Size(100.0.w, 45.0.h),
+                              backgroundColor: AppColors.white),
+                          child: SvgPicture.asset(MBankAssetsSvg.google),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                fixedSize: Size(100.0.w, 45.0.h),
+                                backgroundColor: AppColors.white),
+                            child: SvgPicture.asset(MBankAssetsSvg.apple),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
