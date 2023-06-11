@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mbank/screens/home.dart';
-// import 'package:mbank/screens/sendCode.dart';
-// import 'package:mbank/screens/login.dart';
-// import 'package:mbank/screens/passScreen.dart';
 
 void main() {
   runApp(const MyApp());

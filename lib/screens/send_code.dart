@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mbank/screens/home.dart';
 import 'package:mbank/theme/theme_colors.dart';
 
 class sendCode extends StatefulWidget {
@@ -112,7 +113,14 @@ class _sendCodeState extends State<sendCode> {
                   ),
                   SizedBox(height: 48.h),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize:
                           Size(MediaQuery.of(context).size.width, 45.0.h),

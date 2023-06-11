@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mbank/screens/home.dart';
 import 'package:mbank/theme/theme_colors.dart';
 import 'package:mbank/utils/assets.dart';
 
@@ -55,7 +56,7 @@ class PassScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 58.0.h),
                   SvgPicture.asset(
-                    MBankAssets.protect,
+                    MBankAssetsSvg.protect,
                     width: 190.0.w,
                     height: 190.0.h,
                   ),
@@ -108,7 +109,14 @@ class PassScreen extends StatelessWidget {
                     height: 147.h,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize:
                           Size(MediaQuery.of(context).size.width, 45.0.h),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mbank/screens/create_user.dart';
+import 'package:mbank/screens/passScreen.dart';
 import 'package:mbank/theme/theme_colors.dart';
 import 'package:mbank/utils/assets.dart';
 
@@ -30,7 +32,7 @@ class LogInScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 58.0.h),
                   SvgPicture.asset(
-                    MBankAssets.logInSvg,
+                    MBankAssetsSvg.logInSvg,
                     width: 190.0.w,
                     height: 190.0.h,
                   ),
@@ -69,6 +71,19 @@ class LogInScreen extends StatelessWidget {
                     autofocus: true,
                     style: const TextStyle(),
                     decoration: InputDecoration(
+                      counter: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CreateUser(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Create new account',
+                            style: TextStyle(color: AppColors.slateGray),
+                          )),
                       border: const OutlineInputBorder(gapPadding: 0.0),
                       prefixText: ' +998   ',
                       prefixStyle: const TextStyle(
@@ -76,14 +91,21 @@ class LogInScreen extends StatelessWidget {
                         color: AppColors.slateGray,
                       ),
                       hintText: 'XX-XXX-XX-XX',
-                      constraints: BoxConstraints.tightFor(height: 45.0.h),
+                      constraints: BoxConstraints.tightFor(height: 90.0.h),
                     ),
                   ),
                   SizedBox(
-                    height: 48.h,
+                    height: 28.h,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PassScreen(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       fixedSize:
                           Size(MediaQuery.of(context).size.width, 45.0.h),
@@ -117,7 +139,7 @@ class LogInScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                               fixedSize: Size(100.0.w, 45.0.h),
                               backgroundColor: AppColors.white),
-                          child: SvgPicture.asset(MBankAssets.facebook),
+                          child: SvgPicture.asset(MBankAssetsSvg.facebook),
                         ),
                       ),
                       ElevatedButton(
@@ -125,7 +147,7 @@ class LogInScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             fixedSize: Size(100.0.w, 45.0.h),
                             backgroundColor: AppColors.white),
-                        child: SvgPicture.asset(MBankAssets.google),
+                        child: SvgPicture.asset(MBankAssetsSvg.google),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 16),
@@ -134,7 +156,7 @@ class LogInScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                               fixedSize: Size(100.0.w, 45.0.h),
                               backgroundColor: AppColors.white),
-                          child: SvgPicture.asset(MBankAssets.apple),
+                          child: SvgPicture.asset(MBankAssetsSvg.apple),
                         ),
                       ),
                     ],

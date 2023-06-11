@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mbank/screens/send_code.dart';
 import 'package:mbank/theme/theme_colors.dart';
 import '../utils/assets.dart';
 
@@ -39,19 +40,12 @@ class _CreateUserState extends State<CreateUser> {
               14.0.h,
             ),
           ),
-          icon: Row(
+          icon: const Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(
+              Icon(
                 Icons.chevron_left,
                 color: AppColors.slateGray,
-              ),
-              Text(
-                "Back",
-                style: TextStyle(
-                    color: AppColors.slateGray,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400),
               ),
             ],
           ),
@@ -174,7 +168,14 @@ class _CreateUserState extends State<CreateUser> {
                         height: 24,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const sendCode(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           fixedSize:
                               Size(MediaQuery.of(context).size.width, 45.0.h),
@@ -208,7 +209,7 @@ class _CreateUserState extends State<CreateUser> {
                               style: ElevatedButton.styleFrom(
                                   fixedSize: Size(100.0.w, 45.0.h),
                                   backgroundColor: AppColors.white),
-                              child: SvgPicture.asset(MBankAssets.facebook),
+                              child: SvgPicture.asset(MBankAssetsSvg.facebook),
                             ),
                           ),
                           ElevatedButton(
@@ -216,7 +217,7 @@ class _CreateUserState extends State<CreateUser> {
                             style: ElevatedButton.styleFrom(
                                 fixedSize: Size(100.0.w, 45.0.h),
                                 backgroundColor: AppColors.white),
-                            child: SvgPicture.asset(MBankAssets.google),
+                            child: SvgPicture.asset(MBankAssetsSvg.google),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 16),
@@ -225,7 +226,7 @@ class _CreateUserState extends State<CreateUser> {
                               style: ElevatedButton.styleFrom(
                                   fixedSize: Size(100.0.w, 45.0.h),
                                   backgroundColor: AppColors.white),
-                              child: SvgPicture.asset(MBankAssets.apple),
+                              child: SvgPicture.asset(MBankAssetsSvg.apple),
                             ),
                           ),
                         ],
